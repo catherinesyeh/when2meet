@@ -1,0 +1,203 @@
+/* COLORS */
+:root {
+    --text: rgb(22, 21, 21); 
+    --green: rgb(48, 147, 56);
+    --pink: rgb(255, 216, 216);
+    --gray: rgb(111, 108, 108);
+    --light-gray: rgb(232, 228, 228);
+}
+
+::-moz-selection { /* highlight color */
+    background: var(--gray);
+    color: white;
+}
+
+::selection {
+    background: var(--gray);
+    color: white;
+}
+
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { /* add smooth scrolling behavior */
+    scroll-behavior: smooth;
+}
+
+body { /* default styling for whole document body */
+    font-family: Mulish;
+    font-size: calc(14px + 0.2w);
+    line-height: calc(20px + 0.4vw);
+    font-weight: 300;
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* FONT STYLING */
+p { /* page text styling */
+    margin-bottom: calc(10px + 0.5vw);
+    transition: 0.5s;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.center {
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5 { /* headings */
+    font-family: Be Vietnam Pro;
+    font-weight: 800;
+}
+
+h1 {
+    line-height: calc(36px + 2vw);
+    text-align: center;
+}
+
+h3 {
+    font-size: calc(18px + 1vw);
+    line-height: calc(36px + 2vw);
+    font-weight: 400;
+}
+
+h5 {
+    font-size: calc(16px + 0.4vw);
+    line-height: calc(20px + 1vw);
+    font-weight: 600;
+}
+
+a { /* links */
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: 400;
+    transition: 0.5s;
+}
+
+a:hover {
+   opacity: 0.8;
+}
+
+.emphasis { /* special font styles */
+    font-style: italic;
+}
+
+/* MAIN CONTENT */
+#content {
+    margin: calc(12px + 1.2vw) calc(20px + 2vw);
+}
+
+#split { /* split page into two halves */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(50px + 5vw);
+    margin-top: 20px;
+}
+
+#left, #right {
+    text-align: center;
+}
+
+/* LEFT SIDE */
+.legend { /* legend elements */
+    display: inline-flex;
+    margin-top: 5px;
+}
+
+.legend p {
+    display: inline-block;
+}
+
+.legend-item {
+    display: flex;
+    justify-content: center;
+}
+
+.legend-item:not(:last-child) {
+    margin-right: 10px;
+}
+ 
+.square {
+    background-color: var(--pink);
+    border: 1px solid var(--text);
+    height: calc(18px + 0.4vw);
+    width: calc(28px + 0.5vw);
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.square.green {
+    background-color: var(--green);
+}
+
+/* Schedule styling */
+.schedule {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    column-gap: 10px;
+    width: 400px;
+    margin: auto;
+}
+
+.times {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.times p {
+    font-size: smaller;
+    line-height: 28px;
+}
+
+.days, .grid {
+    display: inline-grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+}
+
+.days p {
+    font-size: large;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.grid { /* fill in grid by column */
+    grid-auto-flow: column;
+    border-top: 1px solid var(--text);
+    user-select: none;
+    transition: 0.5s;
+}
+
+.time-block { /* each 15 min time slot */
+    background-color: var(--pink);
+    width: 100%;
+    height: calc(10px + 0.1vw);
+    border-left: 1px solid var(--text);
+    border-right: 1px solid var(--text);
+    transition: 0.1s;
+}
+
+.time-block:nth-child(4n) { 
+    /* style borders accordingly within grid */
+    border-bottom: 1px solid var(--text);
+}
+
+.time-block:nth-child(even):not(:nth-child(4n)) { 
+    /* style borders accordingly within grid */
+    border-bottom: 1px dashed var(--text);
+}
+
+.time-block.selected { /* turn block green if user available */
+    background-color: var(--green);
+}
