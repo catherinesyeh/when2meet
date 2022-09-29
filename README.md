@@ -26,7 +26,7 @@ Open [webpage](https://catherinesyeh.github.io/when2meet/) to start exploring. T
 - *more detailed hover view:* on the real when2meet, when you hover on a timeslot on the group grid, it shows you both who's available and unavailable at that time; right now, I only show the former
   - also, I'm not showing the date + time of the hovered timeslot right now, which the real when2meet does too
  - *hone color updates:* currently, the color legend (e.g., 0/x to x/x available) doesn't update entirely the same as the real when2meet
-  - for example, if there is no time slot where x/x people are available, the darkest color should read x-1/x available, etc.
+    - for example, if there is no time slot where x/x people are available, the darkest color should read x-1/x available, etc.
   
   ## other notes
   This UI was implemented from scratch, without using a tutorial. I did use the [SelectionArea](https://lucasmenendez.github.io/selection-area/) library to help implement when2meet's signature drag + click mechanism. I focused on the inputting availability aspects of both platforms, so I didn't incorporate differences in login, calendar syncing, etc.
