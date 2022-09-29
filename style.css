@@ -110,6 +110,10 @@ a:hover {
 }
 
 /* LEFT SIDE */
+#left-cal {
+    transition: 0.5s;
+}
+
 .legend { /* legend elements */
     display: inline-flex;
     margin-top: 5px;
@@ -175,7 +179,6 @@ a:hover {
 .grid { /* fill in grid by column */
     grid-auto-flow: column;
     border-top: 1px solid var(--text);
-    user-select: none;
     transition: 0.5s;
 }
 
@@ -200,4 +203,64 @@ a:hover {
 
 .time-block.selected { /* turn block green if user available */
     background-color: var(--green);
+}
+
+#select-box { /* show user where they're selecting */
+    border: 2px dotted white;
+}
+
+/* RIGHT SIDE */
+#color-scale { /* color key to show how many people are available */
+    display: inline-flex;
+    margin-top: 5px;
+    transition: 0.5s;
+}
+
+#color-scale p {
+    margin-bottom: 0;
+    transition: 0.5s;
+}
+
+#colors {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--text);
+    margin: 0 5px;
+    transition: 0.5s;
+}
+
+.color-item {
+    height: calc(18px + 0.4vw);
+    width: calc(18px + 0.4vw);
+    display: inline;
+    transition: 0.5s;
+}
+
+#right .emphasis {
+    margin-top: calc(10px + 0.5vw) !important;
+}
+
+/* availability overlay */
+#available-overlay {
+    position: absolute;
+    z-index: 100;
+    background: white;
+    left: 25%;
+    transform: translateX(-50%);
+    transition: 0.5s;
+}
+
+#avail-list {
+    margin-top: 5px;
+}
+
+#avail-list p {
+    margin-bottom: 0;
+}
+
+.hide { /* hidden element styling */
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
 }
